@@ -35,10 +35,10 @@ Designed for premium digital wedding experiences with elegant visuals, smooth in
 
 ---
 
-☁️ Deployment
+##☁️ Deployment
 
 🚀 Recommended Platform: Vercel
 
-🎯 Project Vision
+##🎯 Project Vision
 
 Amora Weds focuses on creating cinematic and luxury digital wedding invitations for premium clients using modern web technologies.
