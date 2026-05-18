@@ -127,7 +127,7 @@ export const packages = [
       "Luxury weddings, destination weddings, NRI clients, and high-budget families.",
 
     price:
-      "₹2800 - ₹3200",
+      "₹2800 - ₹3000",
 
     delivery:
       "3-5 Days",
@@ -163,7 +163,7 @@ export const packages = [
           "https://wedding-invitation3.vercel.app/",
 
         image:
-          "https://images.unsplash.com/photo-1507504031003-b417219a0fde",
+          "https://images.unsplash.com/photo-150750403-b417219a0fde",
       },
 
       {
