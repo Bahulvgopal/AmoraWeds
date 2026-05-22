@@ -43,7 +43,7 @@ export const metadata = {
     title: "AmoraWeds",
     description:
       "Elegant wedding websites for modern couples.",
-    url: "https://amoraweds.com",
+    url: "https://amoraweds.live",
     siteName: "AmoraWeds",
     locale: "en_IN",
     type: "website",
