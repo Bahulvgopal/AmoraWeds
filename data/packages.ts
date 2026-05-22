@@ -36,20 +36,20 @@ export const packages = [
     ],
 
     demos: [
-      {
+       {
         link:
-          "https://wedding-invitation1-rosy.vercel.app/",
+          "https://asuhar-aaliya.vercel.app/",
 
         image:
-          "https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
+          "https://images.unsplash.com/photo-1519741497674-611481863552",
       },
 
       {
         link:
-          "https://wedding-invitation4.netlify.app/",
+          "https://wedding-invitation5.netlify.app/",
 
         image:
-          "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8",
+          "https://images.unsplash.com/photo-1520854221256-17451cc331bf",
       },
     ],
   },
@@ -99,7 +99,7 @@ export const packages = [
           "https://asuhar-aaliya.vercel.app/",
 
         image:
-          "https://images.unsplash.com/photo-1519741497674-611481863552",
+          "/Democover/mid.jpg",
       },
 
       {
@@ -107,7 +107,7 @@ export const packages = [
           "https://wedding-invitation5.netlify.app/",
 
         image:
-          "https://images.unsplash.com/photo-1520854221256-17451cc331bf",
+          "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8",
       },
     ],
   },
@@ -163,7 +163,7 @@ export const packages = [
           "https://wedding-invitation3.vercel.app/",
 
         image:
-          "https://images.unsplash.com/photo-150750403-b417219a0fde",
+          "https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
       },
 
       {
@@ -171,7 +171,7 @@ export const packages = [
           "https://wedding-invitation6.netlify.app/",
 
         image:
-          "https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d",
+          "/Democover/pr.jpg",
       },
     ],
   },

@@ -108,7 +108,7 @@ export default function Hero() {
               style={{ transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
             >
               <img
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+                src="hero image.jpg"
                 alt="A beautiful wedding couple"
                 className={`visual-img ${imgLoaded ? "img-loaded" : ""}`}
                 onLoad={() => setImgLoaded(true)}
@@ -120,7 +120,7 @@ export default function Hero() {
 
           {/* Floating couple name card */}
           <div className="visual-namecard" aria-hidden="true">
-            <span className="namecard-names">Arjun & Meera</span>
+            <span className="namecard-names">Mridul & Avanthika</span>
             <span className="namecard-date">February 14, 2025</span>
           </div>
         </div>
