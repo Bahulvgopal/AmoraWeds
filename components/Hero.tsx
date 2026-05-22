@@ -110,7 +110,7 @@ export default function Hero() {
           />
   </div>
 </div>
-    <div className="visual-overlay" aria-hidden="true" />
+    
      
 
           {/* Floating couple name card */}
