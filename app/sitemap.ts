@@ -1,27 +1,23 @@
 export default function sitemap() {
   return [
     {
-      url: "https://amoraweds.com",
+      url: "https://amoraweds.live",
     },
 
     {
-      url: "https://amoraweds.com/pricing",
+      url: "https://amoraweds.live/pricing",
     },
 
     {
-      url: "https://amoraweds.com/demos",
+      url: "https://amoraweds.live/demos",
     },
 
     {
-      url: "https://amoraweds.com/portfolio",
+      url: "https://amoraweds.live/reviews",
     },
 
     {
-      url: "https://amoraweds.com/reviews",
-    },
-
-    {
-      url: "https://amoraweds.com/contact",
+      url: "https://amoraweds.live/contact",
     },
   ];
 }
