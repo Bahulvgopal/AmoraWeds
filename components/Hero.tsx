@@ -102,21 +102,16 @@ export default function Hero() {
 
           {/* Image with parallax */}
           <div className="visual-img-wrap">
-            <div
-              className="visual-parallax"
-              ref={parallaxRef}
-              style={{ transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
-            >
-              <img
-                src="hero image.jpg"
-                alt="A beautiful wedding couple"
-                className={`visual-img ${imgLoaded ? "img-loaded" : ""}`}
-                onLoad={() => setImgLoaded(true)}
-              />
-              {/* Gradient overlay */}
-              <div className="visual-overlay" aria-hidden="true" />
-            </div>
-          </div>
+            <div className="visual-parallax">
+            <img
+            src="/hero-image.webp"
+            alt="Wedding couple"
+            className="hero-main-image"
+          />
+  </div>
+</div>
+    <div className="visual-overlay" aria-hidden="true" />
+     
 
           {/* Floating couple name card */}
           <div className="visual-namecard" aria-hidden="true">
