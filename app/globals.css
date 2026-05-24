@@ -60,196 +60,8 @@ button {
     #fffaf5;
 }
 
-/* Glow */
 
-.hero360-glow {
-  position: absolute;
 
-  width: 900px;
-  height: 900px;
-
-  border-radius: 50%;
-
-  background: rgba(201,114,138,0.12);
-
-  filter: blur(140px);
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-}
-
-/* Header */
-
-.hero360-header {
-  text-align: center;
-  margin-bottom: 80px;
-
-  position: relative;
-  z-index: 5;
-}
-
-.hero360-tag {
-  letter-spacing: 0.35em;
-  font-size: 12px;
-  color: #c9728a;
-  margin-bottom: 16px;
-}
-
-.hero360-title {
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: clamp(3rem, 5vw, 5rem);
-
-  line-height: 1.05;
-  font-weight: 300;
-
-  color: #3a2c30;
-}
-
-/* Stage */
-
-.hero360-stage {
-  position: relative;
-
-  width: 100%;
-  max-width: 1450px;
-
-  height: 560px;
-
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-
-  perspective: 3000px;
-  transform-style: preserve-3d;
-}
-
-/* Cards */
-
-.hero360-card {
-  position: absolute;
-
-  width: 165px;
-  height: 330px;
-
-  border-radius: 28px;
-
-  overflow: hidden;
-
-  left: 50%;
-  bottom: 0;
-
-  margin-left: -82px;
-
-  transform-style: preserve-3d;
-
-  will-change: transform;
-
-  box-shadow:
-    0 25px 80px rgba(0,0,0,0.15);
-
-  transition:
-    width 0.5s ease,
-    height 0.5s ease;
-}
-
-/* Center Card */
-
-.hero360-card.active {
-  width: 220px;
-  height: 460px;
-
-  margin-left: -110px;
-
-  z-index: 20;
-}
-
-/* Image */
-
-.hero360-image {
-  object-fit: cover;
-}
-
-/* Overlay */
-
-.hero360-overlay {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,0.45),
-      transparent
-    );
-}
-
-/* Content */
-
-.hero360-content {
-  position: absolute;
-
-  bottom: 22px;
-  left: 20px;
-
-  color: white;
-}
-
-.hero360-content span {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-}
-
-.hero360-content h3 {
-  margin-top: 8px;
-
-  font-size: 24px;
-
-  font-family: 'Cormorant Garamond', serif;
-
-  font-weight: 300;
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-  .hero360 {
-    padding: 90px 10px;
-  }
-
-  .hero360-stage {
-    height: 420px;
-    max-width: 100%;
-    perspective: 1800px;
-  }
-
-  .hero360-card {
-    width: 120px;
-    height: 240px;
-
-    margin-left: -60px;
-  }
-
-  .hero360-card.active {
-    width: 170px;
-    height: 340px;
-
-    margin-left: -85px;
-  }
-
-  .hero360-title {
-    font-size: 2.5rem;
-  }
-
-  .hero360-header {
-    margin-bottom: 50px;
-  }
-}
 
 /* ========================================= */
 /* Social Links */
@@ -285,4 +97,68 @@ button {
   object-fit: cover;
   display: block;
 }
+@layer utilities {
+  .swipe-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+  }
 
+  .h3c-petals {
+    position: absolute;
+    inset: -60px -40px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .h3c-petal {
+    position: absolute;
+    top: -40px;
+    border-radius: 150% 0 150% 0;
+    opacity: 1;
+    animation: h3c-fall linear infinite;
+  }
+
+  .h3c-petal:nth-child(odd)  { background: #f5e0e6; }
+  .h3c-petal:nth-child(even) { background: #e8d5b0; }
+  .h3c-petal:nth-child(3n)   { border-radius: 0 150% 0 150%; }
+
+  .h3c-petal-1 { width:12px; height:16px; left:10%; animation-duration:8s;  animation-delay:0s;   }
+  .h3c-petal-2 { width: 9px; height:13px; left:25%; animation-duration:11s; animation-delay:1.5s; }
+  .h3c-petal-3 { width:15px; height:19px; left:40%; animation-duration:9s;  animation-delay:3s;   }
+  .h3c-petal-4 { width:10px; height:14px; left:55%; animation-duration:12s; animation-delay:0.8s; }
+  .h3c-petal-5 { width:13px; height:17px; left:68%; animation-duration:10s; animation-delay:2s;   }
+  .h3c-petal-6 { width: 8px; height:12px; left:80%; animation-duration:13s; animation-delay:4s;   }
+  .h3c-petal-7 { width:16px; height:20px; left:20%; animation-duration:9s;  animation-delay:5s;   }
+  .h3c-petal-8 { width:11px; height:15px; left:90%; animation-duration:11s; animation-delay:2.5s; }
+
+  .swipe-stack {
+    position: relative;
+    width: min(360px, 90vw);
+    aspect-ratio: 3 / 4;
+    height: auto;
+    z-index: 1;
+  }
+
+  .swipe-hint {
+    color: rgba(58,44,48,0.35);
+    font-size: 0.78rem;
+    margin: 0;
+    letter-spacing: 0.08em;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+/* keyframes must be OUTSIDE @layer */
+@keyframes h3c-fall {
+  0%   { transform: translateY(-40px) rotate(0deg)   translateX(0);    opacity: 0;   }
+  10%  { opacity: 0.6; }
+  50%  { transform: translateY(50%)   rotate(180deg) translateX(20px); opacity: 0.5; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(110%)  rotate(360deg) translateX(-15px); opacity: 0;  }
+}

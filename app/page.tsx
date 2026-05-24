@@ -1,27 +1,49 @@
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import Hero360Carousel from "@/components/Hero360Carousel";
+import SwipeCardStack, { CardData } from "@/components/SwipeCardStack";
 import connectDB from "@/lib/mongodb";
 import Review from "@/models/Review";
+
 async function getReviews() {
   try {
     await connectDB();
-
-    const reviews = await Review.find()
-  .sort({ createdAt: -1 })
-  .limit(3);
-
-    return JSON.parse(
-      JSON.stringify(reviews)
-    );
+    const reviews = await Review.find().sort({ createdAt: -1 }).limit(3);
+    return JSON.parse(JSON.stringify(reviews));
   } catch (error) {
     console.log(error);
-
     return [];
   }
 }
-     
- export const dynamic = "force-dynamic";
+
+// ✅ Your wedding photos — change the titles/subtitles to your own story
+const cards: CardData[] = [
+  {
+    id: 1,
+    image: "/templates/1.png",   // 👈 put your image files inside public/templates/
+    title: "Aanya & Vihan",
+    subtitle: "Udaipur, 2026",
+  },
+  {
+    id: 2,
+    image: "/templates/2.png",
+    title: "Arjun & Priya",
+    subtitle: "Mysore, 2026",
+  },
+  {
+    id: 3,
+    image: "/templates/3.png",
+    title: "Sarah & James",
+    subtitle: "Paris, 2026",
+  },
+  {
+    id: 4,
+    image: "/templates/4.png",
+    title: "Meghna & Srivats",
+    subtitle: "Thiruvananthapuram, 2026",
+  },
+];
+
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const reviews = await getReviews();
@@ -36,7 +58,37 @@ export default async function Home() {
       </div>
 
       <Hero />
-      <Hero360Carousel />
+
+      {/* ✅ Swipe Cards Section — Our Story */}
+      
+      <section className="swipe-section">
+        <div className="container">
+          {/* ── Header ── */}
+      <div className="h3c-header">
+        <span className="h3c-eyebrow">
+          <span className="h3c-eyebrow-line" />
+          Premium Collection
+          <span className="h3c-eyebrow-line" />
+        </span>
+        <h2 className="h3c-title">
+          Explore Our<br />
+          <em>Wedding Templates</em>
+        </h2>
+        <div className="h3c-divider">
+          <span className="h3c-leaf" aria-hidden="true">❧</span>
+        </div>
+        <p className="h3c-subtitle">
+          Handcrafted with love — each template tells a unique story
+        </p>
+      </div>
+          
+
+          {/* The swipe card stack lives here */}
+          <div className="swipe-wrapper">
+            <SwipeCardStack cards={cards} />
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose Us */}
       <section className="why-section">
@@ -82,7 +134,6 @@ export default async function Home() {
 
       {/* Reviews Preview */}
       <section className="reviews-section">
-        {/* Decorative top curve */}
         <div className="reviews-curve" aria-hidden="true" />
 
         <div className="container">
@@ -113,10 +164,7 @@ export default async function Home() {
                     <p className="review-name">{review.name}</p>
                     <p className="review-rating">
                       {"★".repeat(Math.min(review.rating, 5))}
-                      <span className="review-rating-num">
-                        {" "}
-                        {review.rating}/5
-                      </span>
+                      <span className="review-rating-num"> {review.rating}/5</span>
                     </p>
                   </div>
                 </div>
@@ -134,12 +182,10 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      
+
       <style>{`
-        /* ─── Fonts ─── */
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
 
-        /* ─── Variables ─── */
         :root {
           --rose:        #c9728a;
           --rose-light:  #f5e0e6;
@@ -154,7 +200,6 @@ export default async function Home() {
           --text-soft:   #b89aa0;
         }
 
-        /* ─── Base ─── */
         .amoera-main {
           font-family: 'Jost', sans-serif;
           background: var(--ivory);
@@ -163,7 +208,8 @@ export default async function Home() {
           position: relative;
         }
 
-        /* ─── Floating Petals ─── */
+        
+
         .petals-container {
           position: fixed;
           inset: 0;
@@ -180,13 +226,11 @@ export default async function Home() {
           animation: falling linear infinite;
         }
 
-        /* Petal shapes & colors */
         .petal:nth-child(odd)  { background: var(--rose-light); }
         .petal:nth-child(even) { background: var(--gold-light); }
         .petal:nth-child(3n)   { border-radius: 0 150% 0 150%; }
         .petal:nth-child(5n)   { border-radius: 50% 50% 0 50%; }
 
-        /* Individual petal sizing + position + timing */
         .petal-1  { width:14px; height:18px; left:5%;  animation-duration:10s; animation-delay:0s;   }
         .petal-2  { width:10px; height:14px; left:12%; animation-duration:13s; animation-delay:1.5s; }
         .petal-3  { width:18px; height:22px; left:20%; animation-duration:9s;  animation-delay:3s;   }
@@ -214,7 +258,6 @@ export default async function Home() {
           100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); opacity: 0; }
         }
 
-        /* ─── Container ─── */
         .container {
           max-width: 1200px;
           margin: 0 auto;
@@ -223,10 +266,75 @@ export default async function Home() {
           z-index: 1;
         }
 
-        /* ─── Section Header ─── */
+        /* ── Header ── */
+        .h3c-header {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .h3c-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-size: 0.7rem;
+          font-weight: 500;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: var(--rose);
+          margin-bottom: 1.1rem;
+        }
+        .h3c-eyebrow-line {
+          display: inline-block;
+          width: 32px;
+          height: 1px;
+          background: var(--gold-light);
+        }
+          
+        
+        .h3c-divider {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.7rem;
+          margin: 1.3rem auto 1.1rem;
+          max-width: 180px;
+        }
+        .h3c-divider::before, .h3c-divider::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background: var(--gold-light);
+        }
+        .h3c-leaf { color: var(--rose); font-size: 1rem; }
+
+        .h3c-subtitle {
+          color: var(--text-mid);
+          font-size: 1rem;
+          font-weight: 300;
+          line-height: 1.8;
+          max-width: 380px;
+          margin: 0 auto;
+        }
+
+        .h3c-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(2.6rem, 6vw, 4.4rem);
+          font-weight: 300;
+          color: var(--text-dark);
+          line-height: 1.15;
+        }
+        .h3c-title em {
+          font-style: italic;
+          color: var(--rose);
+          font-weight: 400;
+        }
+
         .section-header {
           text-align: center;
-          margin-bottom: 4rem;
+          margin-bottom: 3rem;
         }
 
         .eyebrow {
@@ -281,14 +389,24 @@ export default async function Home() {
           background: var(--gold-light);
         }
 
-        .divider-leaf {
-          color: var(--rose);
-          font-size: 1.2rem;
-        }
-
+        .divider-leaf { color: var(--rose); font-size: 1.2rem; }
         .divider-leaf--dark { color: var(--gold); }
 
-        /* ─── Why Section ─── */
+        /* ✅ Swipe Section */
+        .swipe-section {
+          padding: 7rem 0;
+          background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
+          position: relative;
+          z-index: 1;
+        }
+
+        .swipe-wrapper {
+          display: flex;
+          justify-content: center;
+          padding-top: 1rem;
+        }
+
+        /* Why Section */
         .why-section {
           padding: 8rem 0;
           background: var(--ivory);
@@ -312,7 +430,6 @@ export default async function Home() {
           border-radius: 24px;
           padding: 3rem 2.2rem;
           text-align: center;
-          position: relative;
           transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
 
@@ -350,7 +467,7 @@ export default async function Home() {
           font-size: 0.97rem;
         }
 
-        /* ─── Reviews Section ─── */
+        /* Reviews Section */
         .reviews-section {
           background: var(--blush);
           padding: 0 0 7rem;
@@ -381,7 +498,6 @@ export default async function Home() {
           background: #fff;
           border-radius: 24px;
           padding: 2.5rem 2rem 2rem;
-          position: relative;
           border: 1px solid rgba(201, 114, 138, 0.15);
           box-shadow: 0 4px 30px rgba(180, 100, 120, 0.07);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -412,7 +528,6 @@ export default async function Home() {
           line-height: 1.85;
           flex: 1;
           margin: 0 0 2rem;
-          font-weight: 400;
         }
 
         .review-footer {
@@ -443,14 +558,12 @@ export default async function Home() {
           color: var(--text-dark);
           margin: 0 0 0.25rem;
           font-size: 0.95rem;
-          letter-spacing: 0.03em;
         }
 
         .review-rating {
           color: var(--gold);
           font-size: 0.85rem;
           margin: 0;
-          letter-spacing: 0.05em;
         }
 
         .review-rating-num {
@@ -458,7 +571,6 @@ export default async function Home() {
           font-size: 0.75rem;
         }
 
-        /* ─── CTA Buttons ─── */
         .cta-group {
           display: flex;
           justify-content: center;
