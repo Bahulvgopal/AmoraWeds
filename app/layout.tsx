@@ -6,6 +6,8 @@ import { Playfair_Display, Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import Script from "next/script";
 
+
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -24,6 +26,11 @@ export const metadata: Metadata = {
     default:
       "AmoraWeds | Premium Wedding Website & Digital Invitation Service",
     template: "%s | AmoraWeds",
+  },
+
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
   },
 
   description:
