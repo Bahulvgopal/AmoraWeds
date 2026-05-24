@@ -144,6 +144,9 @@ export const packages = [
       "Image Gallery (up to 8 Photos)",
       "Wedding Event Timeline",
       "Countdown",
+      "Add to Calendar",
+      "Multi-language",
+      "Wishes Section",
       "Map Integration",
       "Mobile Responsive Design",
       "Contact Details",
@@ -175,4 +178,126 @@ export const packages = [
       },
     ],
   },
+];
+export const comparisonTable = [
+  {
+    feature: "RSVP",
+    budget: "❌",
+    mid: "Optional",
+    premium: "✅",
+  },
+
+  {
+    feature: "Scratch Reveal",
+    budget: "❌",
+    mid: "❌",
+    premium: "✅",
+  },
+
+   {
+    feature: "Wishes Section",
+    budget: "❌",
+    mid: "❌",
+    premium: "✅",
+   },
+
+  {
+    feature: "Voice / Video Invite",
+    budget: "❌",
+    mid: "❌",
+    premium: "✅",
+  },
+
+  {
+    feature: "Countdown",
+    budget: "Optional",
+    mid: "✅",
+    premium: "✅",
+  },
+
+  {
+    feature: "Gallery",
+    budget: "1 Photo",
+    mid: "6 Photos",
+    premium: "8 Photos",
+  },
+
+  {
+    feature: "Add to Calendar",
+    budget: "❌",
+    mid: "❌",
+    premium: "✅",
+  },
+
+  {
+    feature: "WhatsApp Share",
+    budget: "❌",
+    mid: "Optional",
+    premium: "✅",
+  },
+
+  {
+    feature: "Multi-language",
+    budget: "❌",
+    mid: "❌",
+    premium: "✅",
+  },
+
+  {
+    feature: "Background Music",
+    budget: "❌",
+    mid: "✅",
+    premium: "✅",
+  },
+
+  {
+    feature: "Map Integration",
+    budget: "✅",
+    mid: "✅",
+    premium: "✅",
+  },
+
+  {
+    feature: "Countdown",
+    budget: "Optional",
+    mid: "✅",
+    premium: "✅",
+  },
+
+  {
+    feature: "Animations",
+    budget: "❌",
+    mid: "✅",
+    premium: "Premium",
+  },
+
+  {
+    feature: "Custom Themes",
+    budget: "1",
+    mid: "2",
+    premium: "Multiple",
+  },
+
+  {
+    feature: "Dedicated Designer Support",
+    budget: "❌",
+    mid: "❌",
+    premium: "✅",
+  },
+
+
+  {
+    feature: "Delivery Time",
+    budget: "2-3 Days",
+    mid: "2-4 Days",
+    premium: "3-5 Days",
+  },
+
+  {
+    feature: "Price",
+    budget: "₹1200–1500",
+    mid: "₹1800–2100",
+    premium: "₹2800–3000",
+  },
+
 ];

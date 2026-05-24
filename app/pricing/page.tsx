@@ -1,5 +1,6 @@
 import PricingCard from "@/components/PricingCard";
 import { packages } from "@/data/packages";
+import PackageComparison from "@/components/PackageComparison";
 
 export default function PricingPage() {
   return (
@@ -62,6 +63,7 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+          <PackageComparison />
 
           {/* ── Trust strip ── */}
           <div className="trust-strip">

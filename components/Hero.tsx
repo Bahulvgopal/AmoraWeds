@@ -52,9 +52,9 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-heading">
-            Elegant<br />
-            <em className="hero-heading-em">Wedding Invitation</em><br />
-            Websites
+            Your Wedding.<br />
+            <em className="hero-heading-em">Beautifully </em><br />
+            <em className="hero-heading-em">Online. </em>
           </h1>
 
           <div className="hero-divider">
@@ -62,8 +62,7 @@ export default function Hero() {
           </div>
 
           <p className="hero-sub">
-            Bespoke wedding websites crafted with love —
-            designed to make your most special day timeless.
+            Premium wedding websites with RSVP, maps, countdowns & cinematic invites.
           </p>
 
           {/* Feature pills */}
@@ -123,10 +122,10 @@ export default function Hero() {
       </div>
 
       {/* ── Scroll indicator ── */}
-      <div className="scroll-indicator" aria-hidden="true">
+      {/* <div className="scroll-indicator" aria-hidden="true">
         <span className="scroll-line" />
         <span className="scroll-label">Scroll</span>
-      </div>
+      </div> */}
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
