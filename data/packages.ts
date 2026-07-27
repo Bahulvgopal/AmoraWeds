@@ -163,6 +163,13 @@ export const packages = [
     demos: [
       {
         link:
+          "https://scrolling-wedding-invitation-3.vercel.app/",
+
+        image:
+          "/Democover/cover.jpeg",
+      },
+      {
+        link:
           "https://wedding-invitation3.vercel.app/",
 
         image:
@@ -176,6 +183,7 @@ export const packages = [
         image:
           "/Democover/pr.jpg",
       },
+      
     ],
   },
 ];
